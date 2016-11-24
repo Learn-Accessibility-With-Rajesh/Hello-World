@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+    #selct-product{
+        display: inline-block;
+    }
+    p{
+    	width: 600px;
+    }
+    #selct-product {}
+    
+    #replacement-wrap {
+        width: 400px;
+        border: 1px solid #ccc;
+        display: inline-block;
+    }
+    
+    .replacement-list {
+        height: 400px;
+        list-style: none;
+    }
+    
+    .replacement-list li {
+        position: relative;
+        width: 45%;
+        margin: 5px;
+        display: inline-block;
+    }
+    
+    .radioBtn {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    
+    .radioBtn:focus + div {
+        border-color: #0070c9;
+        border-width: 2px;
+        box-shadow: 0 0 0 3px rgba(0, 112, 201, .3);
+    }
+    
+    .radioBtn:checked + div {
+        border-color: #0070c9;
+        border-width: 2px;
+    }
+    
+    .radioLabel {
+        text-align: center;
+        display: block;
+    }
+    
+    .radioBtn + div {
+        border: 1px solid #d6d6d6;
+        margin: 5%;
+    }
+    
+    .prevBtn,
+    .nextBtn {
+        font-size: 80px;
+        border: none;
+        background: none;
+        margin-top: 150px;
+        vertical-align: top;
+    }
+    .prevBtn[disabled], .nextBtn[disabled]{
+    	color: #ccc;
+    }
+    .tabbedBtnList{
+        list-style: none;
+        padding-left: 200px;
+    }
+    .tabbedBtnList li{
+        display: inline-block;
+    }
+    .tabbedBtnList button{
+        background: none;
+        border: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <p>We’re happy to provide you an in-warranty headphone replacement from Apple, free of charge. You can return your original one to Apple afterwards.</p>
+
+        <!-- Group the whole component with a aria-label -->
+        <div role="group" aria-label="Select the product for Replacement" id="selct-product">
+            <button class="prevBtn"  aria-label="Previous page"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+            <div id="replacement-wrap">
+
+                <!-- Have a different <ul> list for every page group, each page should have aria-label with page number-->
+
+                <ul class="replacement-list list1" aria-label="Page 1">
+                    <li>
+                        <!-- Visually hidden radio button, 'for' attr make the radio selection on clicking the label element -->
+                        <input type="radio" id="AirPod" name="replacementProductSet1" value="AirPod" class="radioBtn AirPod">
+                        <div>
+                            <label for="AirPod">
+                                <img src="http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/M/ME/MMEF2/MMEF2?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1473705678057" width="100%" class="radioImg" height="100%" alt="">
+                                <span class="radioLabel">AirPods</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" id="BeatsSolo" name="replacementProductSet1" value="BeatsSolo" class="radioBtn BeatsSolo">
+                        <div>
+                            <label for="BeatsSolo">
+                                <img src="http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/M/MT/MMTN2/MMTN2?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1473703488187" width="100%" class="radioImg" height="100%" alt="">
+                                <span class="radioLabel">Beats Solo</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" id="BeatsPill" name="replacementProductSet1" value="BeatsPill" class="radioBtn BeatsPill">
+                        <div>
+                            <label for="BeatsPill">
+                                <img src="http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/M/P1/MP162/MP162?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1476917085476" width="100%" class="radioImg" height="100%" alt="">
+                                <span class="radioLabel">Beats Pill</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" id="Powerbeats3" name="replacementProductSet1" value="Powerbeats3" class="radioBtn Powerbeats3">
+                        <div>
+                            <label for="Powerbeats3">
+                                <img src="http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/M/L4/ML4Q2/ML4Q2?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1476917077786" width="100%" class="radioImg" height="100%" alt="">
+                                <span class="radioLabel">Power beats 3</span>
+                            </label>
+                        </div>
+                    </li>
+                    </ul>
+                    <ul class="replacement-list list2" aria-label="Page 2">
+                    <li>
+                        <input type="radio" id="BeatsEp" name="replacementProductSet2" value="BeatsEp" class="radioBtn BeatsEp">
+                        <div>
+                            <label for="BeatsEp">
+                                <img src="http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/M/P1/MP172/MP172?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1476899126324" width="100%" class="radioImg" height="100%" alt="">
+                                <span class="radioLabel">Beats Ep</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" id="BeatsX" name="replacementProductSet2" value="BeatsX" class="radioBtn BeatsX">
+                        <div>
+                            <label for="BeatsX">
+                                <img src="http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/M/L8/ML8V2/ML8V2?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1473379084139" width="100%" class="radioImg" height="100%" alt="">
+                                <span class="radioLabel">Beats X</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" id="IAmButtonBluetooth" name="replacementProductSet2" value="IAmButtonBluetooth" class="radioBtn IAmButtonBluetooth">
+                        <div>
+                            <label for="IAmButtonBluetooth">
+                                <img src="http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/H/KP/HKPR2/HKPR2?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1477527915365" width="100%" class="radioImg" height="100%" alt="">
+                                <span class="radioLabel">I Am Button Bluetooth</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" id="SonosPlay" name="replacementProductSet2" value="AirPod" class="radioBtn SonosPlay">
+                        <div>
+                            <label for="SonosPlay">
+                                <img src="http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/c/on/cons/HKL12/cons-HKL12-sonos-play1?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1475453065557" width="100%" class="radioImg" height="100%" alt="">
+                                <span class="radioLabel">Sonos Play</span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="nextBtn" aria-label="Next Page"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+            <div>
+                <!-- Navigation role being used for quick page navigation -->
+                <ul class="tabbedBtnList" role="tablist" aria-label="Quick page selection">
+                    <li><button aria-label="Page 1" role="tab" aria-selected="true" class="page1"><i class="fa fa-circle" aria-hidden="true"></i></button></li>
+                    <li><button aria-label="Page 2" role="tab" aria-selected="false" class="page2"><i class="fa fa-circle-o" aria-hidden="true"></i></button></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        //Code just to demo VoiceOver experience
+    	$(".prevBtn").prop("disabled",true);
+        $(".list2").css("display", "none").attr("aria-hidden","true");
+
+        $(".nextBtn , .page2").on("click", function() {
+            $(".list1").hide().attr("aria-hidden","true");
+            $(".list2").show().removeAttr("aria-hidden");
+            $(".nextBtn").prop("disabled",true);
+            $(".prevBtn").prop("disabled",false);
+            $('.list2 input[type=radio]').prop('checked',false);
+            $('.page2').attr("aria-selected", "true"); 
+            $('.page1').attr("aria-selected", "false"); 
+            $('.page2 i').removeClass("fa-circle-o").addClass("fa-circle");
+            $('.page1 i').removeClass("fa-circle").addClass("fa-circle-o");
+        })
+
+        $(".prevBtn , .page1").on("click", function() {
+            $(".list2").hide().attr("aria-hidden","true");
+            $(".list1").show().removeAttr("aria-hidden");
+            $(".nextBtn").prop("disabled",false);
+            $(".prevBtn").prop("disabled",true);
+            $('.list1 input[type=radio]').prop('checked',false);
+            $('.page2').attr("aria-selected", "false"); 
+            $('.page1').attr("aria-selected", "true"); 
+            $('.page2 i').removeClass("fa-circle").addClass("fa-circle-o");
+            $('.page1 i').removeClass("fa-circle-o").addClass("fa-circle");
+        })
+
+    });
+    </script>
+</body>
+
+</html>
